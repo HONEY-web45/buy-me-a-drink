@@ -14,6 +14,7 @@ export default function Home() {
     setname(e.target.value)
   }
   const Click= async ()=>{
+      console.log("Button clicked!");
   const a= await click(name)
   if(a){
     router.push(`/${a.username}`)

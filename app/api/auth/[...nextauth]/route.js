@@ -11,7 +11,8 @@ import Payment from '@/models/Payment';
  
 
 export const authoptions =  NextAuth({
-    providers: [
+
+  providers: [
       // OAuth authentication providers...
       GitHubProvider({
         clientId: process.env.GITHUB_ID,
