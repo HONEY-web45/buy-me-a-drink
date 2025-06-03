@@ -35,7 +35,7 @@ useEffect(() => {
                
       <h1 className="text-3xl text-white font-bold text-center">Login/Signup To Get Started</h1>
 <div className="loginbtns flex justify-center">
-<div className=" min-h-screen flex flex-col  items-center gap-2 px-3 sm:px-10 py-10">
+<div className=" min-h-screen flex flex-col  items-center gap-2 px-1 sm:px-10 py-10">
 
 
 

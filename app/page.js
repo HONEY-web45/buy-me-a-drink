@@ -48,6 +48,7 @@ export default function Home() {
       <Link href="/about">
       <button type="button" className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Read More</button> </Link>
       </div>
+      <h1 className="text-lg sm:text-2xl font-bold text-center"> Search for a User</h1>
 <div className="flex items-center gap-4">
   <input type="text" value={name} onChange={(e)=>change(e)} className="h-8 sm:h-10 w-32 pl-2 sm:w-40 bg-slate-600 rounded-lg" />
   <button className='text-white   bg-gradient-to-br  from-black  to-slate-700 hover:bg-gradient-to-bl  px-3 py-1 sm:py-2 rounded-lg' onClick={()=>Click()}>
