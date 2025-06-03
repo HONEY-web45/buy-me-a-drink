@@ -3,7 +3,11 @@ import mongoose from "mongoose";
 
 const connectDb = async () => {
         try {
-            const conn = await mongoose.connect("mongodb://localhost:27017/patreon",{serverSelectionTimeoutMS: 30000});
+            const conn =  await mongoose.connect(process.env.MONGO_URI, {
+     
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 30000, // Increased timeout
+    });
            console.log(`MongoDB Connected: ${conn.connection.host}`);
             return conn;
             
