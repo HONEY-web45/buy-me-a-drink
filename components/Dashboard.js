@@ -55,7 +55,8 @@ const getdata=async()=>{
   if (a) {
   
     setform(a);
-    setname(a.name)
+    if(a.name){
+    setname(a.name)}
   }
 }
 
