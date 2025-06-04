@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
     "google-pay": "^0.0.1",
     "mongoose": "^8.9.6",
     "next": "^15.2.2",
