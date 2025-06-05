@@ -8,6 +8,7 @@ import Head from 'next/head'
 const page = () => {
 const router=useRouter()
 const { data: session } = useSession()
+
 useEffect(() => {
         
       
@@ -19,7 +20,7 @@ useEffect(() => {
             
       }
      
-    },[])
+    },[session])
     
     useEffect(() => {
       document.title = "Login - Buy Me A Drink"

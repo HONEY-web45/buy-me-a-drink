@@ -28,9 +28,7 @@ export default function Home() {
   return (
     
     <div className="text-white  ">
-       <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+       
       <section className=" flex flex-col items-center justify-center h-screen gap-3 mx-10 sm:gap-8">
      
 <div className="flex  items-center justify-between sm:justify-center ">
@@ -53,13 +51,8 @@ export default function Home() {
 <div className="flex items-center gap-4">
   <input type="text" value={name} onChange={(e)=>change(e)} className="h-8 sm:h-10 w-32 pl-2 sm:w-40 bg-slate-600 rounded-lg" />
   <button className='text-white   bg-gradient-to-br  from-black  to-slate-700 hover:bg-gradient-to-bl  px-3 py-1 sm:py-2 rounded-lg' onClick={()=>Click()}>
-  <lord-icon
-  src="https://cdn.lordicon.com/fkdzyfle.json"
-  trigger="hover"
-  style={{ "width": '25px', "height": '25px',"PaddingBottom":"2px" }}
-  colors="primary:white,secondary:#fbbf24" >
-</lord-icon>
-</button>
+  <Image src="searchhh.svg" width={25} height={25} alt=""  className="invert"/> 
+</button> 
 </div>
       </section>
    <div className="h-[4px] bg-zinc-800 w-full "></div>
@@ -85,16 +78,7 @@ export default function Home() {
   </div>
 </div>
         </div>
-   <div className="h-[4px] bg-zinc-800 mt-14 w-full"></div>
-        <div className="py-16 container px-10 mx-auto">
-          <p className="text-2xl font-bold text-center">Learn More About Us
-          </p>
-          <div className="flex flex-col gap-10 py-10 sm:py-20  text-center">
-            <p>At Buy Me A Drink, we are dedicated to supporting developers, creators, and influencers by connecting them with their supporters. Our platform enables individuals to fund their projects and ideas, providing a space where creativity and innovation can thrive.</p>
-            <p>Our mission is to empower talented individuals by facilitating financial support, allowing them to focus on what they do best – creating. Whether you're a developer coding the next big app, a content creator making engaging videos, or an influencer sharing your passion, Buy Me A Drink is here to help you achieve your goals.</p>
-            <p>We believe in the power of community and the impact of collective support. By providing a platform for patrons to contribute, we aim to transform dreams into reality and foster a culture of creativity and innovation.</p>
-          </div>
-        </div>
+   
       </section>
 
       </div>

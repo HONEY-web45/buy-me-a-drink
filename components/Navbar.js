@@ -12,7 +12,7 @@ let path=usePathname()
   
   return (
     <nav className='text-white  bg-gray-800  flex sm:flex-row  flex-col  sm:justify-between py-2.5 px-2 sm:px-10 items-center '>
-      <script src="https://cdn.lordicon.com/lordicon.js"></script>  
+      
         <div className="logo text-xl font-bold ml-1 sm:ml-0 ">
             <Link href={"/"} className='cursor-pointer flex  items-center'>
           <span className='text-2xl'>  Buy me a Drink!</span>

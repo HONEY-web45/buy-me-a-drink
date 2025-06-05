@@ -7,7 +7,9 @@ import User from "@/models/User";
 
 
 
-export  const  POST=async(req)=> {
+export  const  POST=async(req,res)=> {
+   res.setHeader("Cache-Control", "private, max-age=3600"); // Allow caching for 1 hour
+  res.status(200).json({ message: "Caching enabled!" });
   await connectDb()
   let body = await req.formData()
   body = Object.fromEntries(body)

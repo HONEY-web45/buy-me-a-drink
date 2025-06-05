@@ -11,7 +11,7 @@
   "dependencies": {
     "@vercel/speed-insights": "^1.2.0",
     "google-pay": "^0.0.1",
-    "mongoose": "^8.9.6",
+    "mongoose": "^8.3.4",
     "next": "^15.2.2",
     "next-auth": "^4.24.11",
     "razorpay": "^2.9.6",

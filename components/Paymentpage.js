@@ -142,9 +142,9 @@ theme="light"
 transition={Bounce}
 />
       
-<Script src="https://checkout.razorpay.com/v1/checkout.js"></Script>
+<Script src="https://checkout.razorpay.com/v1/checkout.js" defer></Script>
 {/* <script src="https://checkout.razorpay.com/v1/checkout.js"></script> */}
-<script type="text/javascript" src="https://checkout.razorpay.com/v1/razorpay.js"></script>
+<script type="text/javascript" src="https://checkout.razorpay.com/v1/razorpay.js" defer></script>
 
 
 
