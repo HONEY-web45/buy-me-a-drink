@@ -72,8 +72,8 @@ const getdata=async()=>{
 const change=(e) => { 
   setform({...form,[e.target.name]:e.target.value})
 }
-const submit=async() => {
-  
+const submit=async(e) => {
+   
   let u=await updateprofile(name,session.user.name,form)
 
 

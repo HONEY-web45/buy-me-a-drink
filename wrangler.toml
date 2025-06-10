@@ -1,0 +1,4 @@
+name = "buy-me-a-drink-worker"
+type = "javascript"
+account_id = "killerhack498"
+workers_dev = true
