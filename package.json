@@ -9,9 +9,9 @@
     "lint": "next lint",
     "export": "next export"
   },
+ 
   "dependencies": {
     "@vercel/speed-insights": "^1.2.0",
-    "google-pay": "^0.0.1",
     "mongoose": "^8.3.4",
     "next": "^15.2.2",
     "next-auth": "^4.24.11",
