@@ -1,4 +1,4 @@
-name = "buy-me-a-drink-worker"
+name = "buy-me-a-drink"
 main = "worker.js"
 workers_dev = true
 compatibility_date = "2025-06-10"
