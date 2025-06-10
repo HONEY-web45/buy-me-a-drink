@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Payment from "@/models/Payment";
 import Razorpay from "razorpay";
 import { validatePaymentVerification } from "razorpay/dist/utils/razorpay-utils";
-import connectDb from "@/backend/db/connectDB";
+import connectDb from "@/db/connectDB";
 import User from "@/models/User";
 
 
