@@ -1,4 +1,4 @@
 name = "buy-me-a-drink-worker"
-type = "javascript"
-account_id = "killerhack498"
+main = "worker.js"
 workers_dev = true
+compatibility_date = "2025-06-10"
