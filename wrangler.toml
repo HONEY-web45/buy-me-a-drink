@@ -1,5 +1,4 @@
 name = "buy-me-a-drink-worker"
-main = "worker.js"
- workers_dev = true
+
 compatibility_date = "2025-06-10"
 pages_build_output_dir = ".next"
