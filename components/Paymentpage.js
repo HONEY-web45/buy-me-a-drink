@@ -150,9 +150,9 @@ transition={Bounce}
 
 
 <div className='relative h-[55vh] flex items-end justify-center '>
-  <img src={currentUser.coverpic} alt="Please Enter correct Link" className='absolute top-0 w-full h-[50vh] z-0' />
+  <img src={currentUser.coverpic} alt="Please Enter correct Link" className='absolute top-0 text-white text-lg font-bold w-full h-[50vh] z-0' />
   <div className='mt-10' >
-  <img src={currentUser.profilepic} alt="Please Enter correct Link" className='z-10 rounded-full w-28 h-24 relative ' />
+  <img src={currentUser.profilepic} alt="Please Enter correct Link" className='z-10 text-white text-lg font-bold rounded-full w-28 h-24 relative ' />
   </div>
 </div>
 
