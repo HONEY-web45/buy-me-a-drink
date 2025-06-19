@@ -60,7 +60,7 @@ const PrivacyPolicy = () => {
         <h2 className="text-xl font-bold">7. Contact Us</h2>
         <p className="text-lg">
           For any privacy-related concerns, reach out to{" "}
-          <strong>privacy@buymedrink.com</strong>.
+          <strong>nitik2643@gmail.com</strong>.
         </p>
       </section>
 

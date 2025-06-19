@@ -100,7 +100,7 @@ const handle=(e)=>{
         let a=await initiate(amount,user_name,paymentform)
         let orderid=a.id
     var options = {
-    "key_id": currentUser.id, // Enter the Key ID generated from the Dashboard
+    "key": currentUser.id, // Enter the Key ID generated from the Dashboard
     "amount": amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     "currency": "INR",
     "name": "Buy Me A Drink", //your business name
@@ -109,9 +109,9 @@ const handle=(e)=>{
     "order_id":orderid, //This is a sample Order ID. Pass the id obtained in the response of Step 1
     "callback_url": `${process.env.NEXT_PUBLIC_URL}/api/razorpay`,
     "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
-        "name": "Nitik Choudhary", //your customer's name
-        "email": "nitik23212@example.com",
-        "contact": "9000090000" //Provide the customer's phone number for better conversion rates 
+        "name": currentUser.name, //your customer's name
+        // "email": "nitik23212@example.com",
+        // "contact": "9000090000" //Provide the customer's phone number for better conversion rates 
     },
     "notes": {
         "address": "Razorpay Corporate Office"
@@ -143,16 +143,11 @@ transition={Bounce}
 />
       
 <Script src="https://checkout.razorpay.com/v1/checkout.js" defer></Script>
-{/* <script src="https://checkout.razorpay.com/v1/checkout.js"></script> */}
-<script type="text/javascript" src="https://checkout.razorpay.com/v1/razorpay.js" defer></script>
-
-
-
 
 <div className='relative h-[55vh] flex items-end justify-center '>
-  <img src={currentUser.coverpic} alt=" Please Enter correct Link" className='absolute top-0 text-white text-lg font-bold w-full h-[50vh] z-0' />
+  <img src={currentUser.coverpic} alt=" Please Enter correct Link" className='absolute top-0 text-center text-white text-lg font-bold w-full h-[50vh] z-0' />
   <div className='mt-10' >
-  <img src={currentUser.profilepic} alt=" Please Enter correct   Link" className='z-10 text-white text-lg font-bold rounded-full w-28 h-24 relative ' />
+  <img src={currentUser.profilepic} alt=" Please Enter correct   Link" className='z-10 text-center text-white text-lg font-bold rounded-full w-28 h-24 relative ' />
   </div>
 </div>
 
