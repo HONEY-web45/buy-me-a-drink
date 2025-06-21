@@ -47,7 +47,9 @@ export const authoptions =  NextAuth({
             // Create a new user
              const newUser = await User.create({
               email: user.email, 
-              username: user.name 
+              username: profile?.login || // GitHub username
+          profile?.name || // Google or Facebook display name
+          user?.name
             })   
             return true
           } 

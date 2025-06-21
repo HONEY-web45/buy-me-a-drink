@@ -31,6 +31,7 @@ export const fetchuser=async(username) => {
    
     
  }
+
 export const fetchpayment=async(username) => { 
     await connectDb()
    
@@ -42,7 +43,7 @@ export const fetchpayment=async(username) => {
  export const updateprofile=async(name,username,newdata)=>{
     await connectDb()
     let ndata = JSON.parse(JSON.stringify(newdata))
-
+let message="Profile Updated Successfully"
     // If the username is being updated, check if username is available
     if (username !== ndata.username) {
         let u = await User.findOne({ username: ndata.username })
@@ -53,9 +54,10 @@ export const fetchpayment=async(username) => {
         
 
      let b=   await User.updateOne({email: ndata.email}, ndata)
+     
         // Now update all the usernames in the Payments table 
         await Payment.updateMany({to_user: username}, {to_user: ndata.username})
-     return b   
+     return b,message   
     }
  
     else if (name !== ndata.name) {
@@ -69,7 +71,7 @@ export const fetchpayment=async(username) => {
    let b=   await User.updateOne({email: ndata.email}, ndata)
       // Now update all the usernames in the Payments table 
       
-   return b   
+   return b  
   }
     
     else{
@@ -78,8 +80,8 @@ export const fetchpayment=async(username) => {
         
      let c=   await User.updateOne({email: ndata.email}, ndata)
      return c
-    }
      
+    }
     }
 
  export const click= async (name)=>{

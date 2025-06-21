@@ -4,11 +4,13 @@ import Link from 'next/link'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { redirect, useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
+
 const Navbar = () => {
 let path=usePathname()
   const { data: session } = useSession()
   const [show, setshow] = useState(false)
-  
+
+
   
   return (
     <nav className='text-white  bg-gray-800  flex sm:flex-row  flex-col  sm:justify-between py-2.5 px-2 sm:px-10 items-center '>
@@ -26,7 +28,7 @@ let path=usePathname()
 
   {session && 
   <span className='sm:pl-2 relative w-full '>
-<button id="dropdownDefaultButton" onClick={()=>setshow(!show)}   onBlur={()=>setTimeout(() => {setshow(false)}, 100)} data-dropdown-toggle="dropdown" className="text-white bg-gradient-to-br from-black  to-slate-700  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg     w-[98%]  sm:w-56 text-sm px-5 py-3   inline-flex items-center justify-around dark:bg-blue-600  dark:hover:bg-blue-700 dark:focus:ring-slate-700 " type="button"> <span className='text-base'> {session.user.name}</span> <svg className="w-2.5 h-2.5 mt-1 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+<button id="dropdownDefaultButton" onClick={()=>setshow(!show)}   onBlur={()=>setTimeout(() => {setshow(false)}, 100)} data-dropdown-toggle="dropdown" className="text-white bg-gradient-to-br from-black  to-slate-700  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg     w-[98%]  sm:w-56 text-sm px-5 py-3   inline-flex items-center justify-around dark:bg-blue-600  dark:hover:bg-blue-700 dark:focus:ring-slate-700 " type="button"> <span className='text-base'> {session?.user?.name}</span> <svg className="w-2.5 h-2.5 mt-1 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
 </svg>
 </button>
