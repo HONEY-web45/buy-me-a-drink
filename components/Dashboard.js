@@ -86,6 +86,7 @@ const submit=async(e) => {
       theme: "light",
       transition: Bounce
     });
+  
     
   }
   else if (form.name.length<3) {

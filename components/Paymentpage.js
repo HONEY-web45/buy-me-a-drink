@@ -51,7 +51,7 @@ if (dbpayments) {
     
     useEffect(() => {
       if (search.get('paymentdone')=="true" ) {
-        toast(' Thanks for payment', {
+        toast.success(' Thanks for payment', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -69,7 +69,7 @@ if (dbpayments) {
     }, [])
     
    useEffect(() => {
-    toast(" Payment buttons are disabled.If you want to do payments,then you'll have to enter your name,message and amount first", {
+    toast.info(" Payment buttons are disabled.If you want to do payments,then you'll have to enter your name,message and amount first", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
