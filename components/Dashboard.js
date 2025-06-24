@@ -38,7 +38,7 @@ const Dashboard = () => {
         }
          toast.info(' If you want to see your page ,kindly click on  the button which shows your Username in right side top corner and then click on "Your Page"  ', {
     position: "top-center",
-    autoClose: 5000,
+    autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: false,
     pauseOnHover: true,
@@ -77,7 +77,7 @@ const submit=async(e) => {
   if (form.name.length<1 && form.coverpic.length<1 && form.profilepic.length<1 && form.id.length<1 && form.secret.length<1) {
     toast.error("Please enter your full details", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 1800,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,
@@ -92,7 +92,7 @@ const submit=async(e) => {
   else if (form.name.length<3) {
     toast.error("Please enter your name", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,
@@ -104,7 +104,7 @@ const submit=async(e) => {
   else if (form.username.length<5) {
     toast.error("Please enter legit username", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,
@@ -118,7 +118,7 @@ const submit=async(e) => {
   else if (form.profilepic.length<20 || form.coverpic.length<20) {
     toast.error("Please enter correct profile picture and cover picture details", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,
@@ -130,7 +130,7 @@ const submit=async(e) => {
   else if (form.id.length<1 && form.secret.length<1) {
     toast.error("Please enter Razorpay Id and Secret", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,
@@ -144,7 +144,7 @@ const submit=async(e) => {
  else if ( form.id.length<7) {
  toast.error("Please enter a valid Razorpay Id", {
     position: "top-right",
-    autoClose: 5000,
+    autoClose: 1500,
     hideProgressBar: false,
     closeOnClick: false,
     pauseOnHover: true,
@@ -156,7 +156,7 @@ const submit=async(e) => {
  else if ( form.secret.length<7) {
  toast.error("Please enter a valid Razorpay Secret", {
     position: "top-right",
-    autoClose: 5000,
+    autoClose: 1500,
     hideProgressBar: false,
     closeOnClick: false,
     pauseOnHover: true,
@@ -171,7 +171,7 @@ const submit=async(e) => {
 
   toast.success("Profile Updated", {
     position: "top-right",
-    autoClose: 5000,
+    autoClose: 1000,
     hideProgressBar: false,
     closeOnClick: false,
     pauseOnHover: true,

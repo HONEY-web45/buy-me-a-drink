@@ -71,7 +71,7 @@ if (dbpayments) {
    useEffect(() => {
     toast.info(" Payment buttons are disabled.If you want to do payments,then you'll have to enter your name,message and amount first", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,

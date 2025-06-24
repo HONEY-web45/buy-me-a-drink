@@ -37,7 +37,7 @@ export default function Home() {
       </p> */}
       <span><img src="tea.gif" alt=""  className="sm:w-[80px] mb-3 sm:mb-0 rounded-full w-[60px]"/></span>
 </div>
-      <p className=" lg:mx-48 break-words lg:text-lg text-slate-300 text-base text-center font-semibold">A SIMPLE SUPPORT PLATFORM FOR CREATORS. FRIENDS AND FOLLOWERS CAN SEND SMALL TIPS — NO PRODUCTS, NO SUBSCRIPTIONS — JUST GRATITUDE AND SUPPORT.</p>
+      <p className=" lg:mx-48 break-words lg:text-base text-slate-300 text-sm text-center font-semibold">A SIMPLE SUPPORT PLATFORM FOR CREATORS. FRIENDS AND FOLLOWERS CAN SEND SMALL TIPS — NO PRODUCTS, NO SUBSCRIPTIONS — JUST GRATITUDE AND SUPPORT.</p>
       
 
 
