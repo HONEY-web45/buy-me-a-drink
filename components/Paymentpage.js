@@ -121,8 +121,23 @@ const handle=(e)=>{
     }
 };
 var rzp1 = new window.Razorpay(options);
-
+if(a.error){  
+          
+        toast.error("Authentication with Razorpay failed — check your Key ID or Secret.", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce
+        });
+      }
+else{
 rzp1.open()
+}
 
 }
   return (

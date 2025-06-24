@@ -7,6 +7,7 @@ import User from "@/models/User"
 
 export const initiate=async(amount,to_username,paymentform)=>{
 await connectDb()
+try{
 let user=await User.findOne({username:to_username})
 var instance = new Razorpay({ key_id: user.id, key_secret:user.secret });
 
@@ -14,11 +15,17 @@ let options={
     amount:Number.parseInt(amount),
     currency:"INR"
 }
+
 let x=await instance.orders.create(options)
+
 console.log(x)
+
 //create a payment object which shows a pending payment in the database
 await Payment.create({oid:x.id,amount:amount/100,to_user:to_username,name:paymentform.name,message:paymentform.message})
-return x
+return x}
+catch(err){
+    console.error("Error in initiating payment:", err)
+    return { error: err.error }}
 }
 
 
