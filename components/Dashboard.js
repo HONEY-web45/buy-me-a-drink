@@ -168,7 +168,19 @@ const submit=async(e) => {
   else{
   let u=await updateprofile(name,session.user.name,form)
 
-
+  if (u.error) {
+  toast.error(u.error, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce
+  })}
+else{
   toast.success("Profile Updated", {
     position: "top-right",
     autoClose: 1000,
@@ -186,7 +198,7 @@ const submit=async(e) => {
      router.push(`/${form.username}`)
   }, 1000);
           
-   } }
+   }} }
    
   return (
     <div className='text-white flex flex-col  items-center py-7 px-6 '>
