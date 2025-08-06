@@ -119,7 +119,7 @@ tl.from("#four",{
     
     <div className="text-white  overflow-hidden">
        
-      <section className=" flex flex-col items-center justify-center h-screen gap-3 mx-10 sm:gap-8">
+      <section className=" flex flex-col items-center justify-center h-screen gap-3 mx-10 sm:gap-8" id="up">
      
 <div className="flex  items-center justify-between sm:justify-center a">
 <span className="bg-gradient-to-b from-white text-2xl sm:text-6xl sm:ml-2  to-gray-400 bg-clip-text font-bold text-transparent text-center ">Buy Me A Drink </span>
@@ -147,7 +147,7 @@ tl.from("#four",{
       </section>
    <div className="h-[4px] bg-zinc-800 w-full "></div>
       <section className="min-h-[80vh]  py-16">
-        <div className="space-y-14 mx-10">
+        <div className="space-y-14 mx-10 gs">
 
 <p className="text-2xl font-bold text-center " id="one">Your fans can Buy  you a Drink</p>
 <div className="flex sm:flex-row flex-col sm:gap-4 gap-8 justify-evenly">
