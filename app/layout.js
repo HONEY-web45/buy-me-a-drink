@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       
       <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="bg-black"
         >
           <Leniss>
           <Sessionwrapper>
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
 
         </div>
         
-        <div className="min-h-[80vh] bg-black/30 ">
+        <div className="min-h-[80vh]  ">
  <video
   autoPlay
   loop
