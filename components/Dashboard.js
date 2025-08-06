@@ -5,7 +5,10 @@ import { redirect, useRouter } from 'next/navigation'
 import { updateprofile,fetchuser } from '@/actions/useractions'
 import { ToastContainer, toast } from 'react-toastify';
 import { Bounce } from 'react-toastify';
-
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import Spin from './Spin'
+gsap.registerPlugin(ScrollTrigger)
 
 
 
@@ -15,7 +18,7 @@ const Dashboard = () => {
   
   const { data: session,status,update } = useSession()
   
-  
+  const [load, setLoad] = useState(true)
   const [form, setform] = useState({name:"",email:"",username:"",profilepic:"",coverpic:"",id:"",
     secret:""})
     const [name, setname] = useState()
@@ -23,6 +26,17 @@ const Dashboard = () => {
     
 
     
+    const getdata=async()=>{
+      let a = await fetchuser(session?.user?.name);
+      console.log(a);
+      
+      if (a) {
+      
+        setform(a);
+        if(a.name){
+        setname(a.name)}
+      }
+    }
      
 
     
@@ -34,36 +48,15 @@ const Dashboard = () => {
             router.push('/login')
         }
         else {
-            getdata()
-        }
-         toast.info(' If you want to see your page ,kindly click on  the button which shows your Username in right side top corner and then click on "Your Page"  ', {
-    position: "top-center",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: false,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    transition: Bounce
-    })
-    }, [])
-
-const getdata=async()=>{
-  let a = await fetchuser(session?.user?.name);
-  console.log(a);
+          const a=async() => {  
+         await   getdata()
+            
+              
+              setLoad(false)
+          
+            requestAnimationFrame(()=> {
+    
   
-  if (a) {
-  
-    setform(a);
-    if(a.name){
-    setname(a.name)}
-  }
-}
-
-
-
- useEffect(() => {
      let tl=gsap.timeline()
 
      tl.from(".one",{
@@ -112,8 +105,28 @@ const getdata=async()=>{
       y:100,
       opacity:0,
       duration:.2
-     })
-     }, [])
+     })})
+        }
+        a()
+      }
+    }, [])
+
+
+
+
+//  useEffect(() => {
+//        toast.info(' If you want to see your page ,kindly click on  the button which shows your Username in right side top corner and then click on "Your Page"  ', {
+//     position: "top-right",
+//     autoClose: 3000,
+//     hideProgressBar: false,
+//     closeOnClick: false,
+//     pauseOnHover: true,
+//     draggable: true,
+//     progress: undefined,
+//     theme: "light",
+//     transition: Bounce
+//     })
+//      }, [])
 
 
 
@@ -251,6 +264,8 @@ else{
    }} }
    
   return (
+  <>
+  {load ? <Spin/>:
     <div className='text-white flex flex-col   items-center py-7 px-6 '>
        <ToastContainer
 position="top-right"
@@ -295,8 +310,8 @@ transition={Bounce}
 
 
     </form>
-  </div>
-  
+  </div>}
+  </>
   )
 }
 

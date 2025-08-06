@@ -8,16 +8,21 @@ import { redirect, useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify';
 import { useSearchParams } from 'next/navigation'
 import { Bounce } from 'react-toastify';
-
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import Spin from './Spin'
+gsap.registerPlugin(ScrollTrigger)
 
 const Paymentpage = ({user_name}) => {
 const { data: session,status,update } = useSession()
 const [paymentform, setPaymentform] = useState({name:"",message:"",amount:""})
-
+const [load, setLoad] = useState(true)
 const [currentUser, setcurrentUser] = useState({})
 const [payments, setPayments] = useState([])
 const search=useSearchParams()
 const router=useRouter()
+
+
 
 
 const getData = async () => {
@@ -26,28 +31,118 @@ const getData = async () => {
     
     setcurrentUser(u)
   }
-
- 
+  
   let dbpayments = await fetchpayment(user_name)
   
-   
-   
-if (dbpayments) {
+  if (dbpayments) {
     setPayments(dbpayments) 
-}
-
+    
+  }
   
 }
 
 
- useEffect(() => {
-  
-    if (currentUser!=null ) {
-     
-      getData()
-      
+
+
+
+
+
+useEffect(() => {
+  const fetchDataAndAnimate =async  () => {
+    if (currentUser != null) {
+      await getData();
+
+      setTimeout(() => {
+        setLoad(false);
+requestAnimationFrame(()=>{
+        const t1 = gsap.timeline();
+        t1.from(".a", {
+          scale: 0,
+          opacity: 0,
+          duration: 0.5,
+          delay: 0.1,
+        });
+        t1.from(".b", {
+          y: 200,
+          opacity: 0,
+          duration: 0.3,
+          delay: -0.5,
+        });
+        t1.from(".c", {
+          y: 200,
+          opacity: 0,
+          duration: 0.2,
+          delay: 0.05,
+        });
+        t1.from(".d", {
+          x: -1000,
+          opacity: 0,
+          duration: 0.2,
+        });
+        t1.from(".f", {
+          x: 800,
+          opacity: 0,
+          duration: 0.2,
+          // delay: -0.1,
+        });})
+      }, 500); // Animation kicks in after 500ms
     }
-  },[])
+  };
+
+  fetchDataAndAnimate();
+}, []);
+
+
+
+
+
+//  useEffect( async () => {
+  
+//     if (currentUser!=null ) {
+     
+//       await getData()
+//      setTimeout(() => {
+        
+//         setLoad(false)
+//       }, 500);
+        
+//     let t1=gsap.timeline()
+    
+    
+//     t1.from(".a",{
+// scale:0,
+// opacity:0,
+// duration:.5,
+// delay:.1
+
+// }),
+//   t1.from(".b",{
+//     y:200,
+//     opacity:0,
+//     duration:0.3,
+//     delay:-.5,
+//   }),
+//   t1.from(".c",{
+//     y:200,
+//     opacity:0,
+//     duration:0.2,
+//     delay:.05
+//   })
+//   t1.from(".d",{
+//     x:-1000,
+//     opacity:0,
+//     duration:0.2,
+//   })
+//   t1.from(".f",{
+//     x:1000,
+//     opacity:0,
+//     duration:0.2,
+//     delay:-.3
+    
+//   })
+  
+//     }
+//   },[])
     
     useEffect(() => {
       if (search.get('paymentdone')=="true" ) {
@@ -87,7 +182,7 @@ if (dbpayments) {
    
     
 
- 
+
 
 
 
@@ -140,8 +235,8 @@ rzp1.open()
 }
 
 }
-  return (
-    
+  return (<>
+    {load ? <Spin /> :
     <div>
     <ToastContainer
 position="top-right"
@@ -160,14 +255,14 @@ transition={Bounce}
 <Script src="https://checkout.razorpay.com/v1/checkout.js" defer></Script>
 
 <div className='relative h-[55vh] flex items-end justify-center '>
-  <img src={currentUser.coverpic} alt=" Please Enter correct Link" className='absolute top-0 text-center text-white text-lg font-bold w-full h-[50vh] z-0' />
+  <img src={currentUser.coverpic} alt=" Please Enter correct Link" className='absolute a top-0 text-center text-white text-lg font-bold w-full h-[50vh] z-0' />
   <div className='mt-10' >
-  <img src={currentUser.profilepic} alt=" Please Enter correct   Link" className='z-10 text-center text-white text-lg font-bold rounded-full w-28 h-24 relative ' />
+  <img src={currentUser.profilepic} alt=" Please Enter correct   Link" className='z-10 b text-center text-white text-lg font-bold rounded-full w-28 h-24 relative ' />
   </div>
 </div>
 
       
-      <div className='flex text-white flex-col justify-center gap-3  mb-4 items-center'>
+      <div className='flex text-white flex-col justify-center gap-3  mb-4 items-center c'>
 
       <div className='  '>
         <h1 className='  text-3xl font-medium'>{currentUser.name}</h1>
@@ -178,7 +273,7 @@ transition={Bounce}
 
       
 <div className="pay   gap-5 px-[10vw]   flex flex-col md:flex-row   pb-10 ">
-  <div className='bg-black/50 SCC  shadow-lg backdrop-blur-sm border border-white/30  w-full px-2  sm:px-10 rounded-xl overflow-y-scroll h-[27rem]  relative text-white'>
+  <div className='bg-black/50 SCC  shadow-lg backdrop-blur-sm border d border-white/30  w-full px-2  sm:px-10 rounded-xl overflow-y-scroll h-[27rem]  relative text-white'>
   <h1 className='text-xl font-bold my-4  '>Top 10 Supporters</h1>
 <ul  className=' ml-4 my-6 '>
   {payments.length==0 && <p className='text-center text-xl flex items-center justify-center text-slate-400'>No Payments yet</p>}
@@ -187,7 +282,7 @@ return(
   <span key={item.oid}>
 
  
-  <li className='flex gap-5  items-center my-6'><img src="user.gif" className='rounded-full' width={40} alt="" />
+  <li className='flex gap-5 e items-center my-6'><img src="user.gif" className='rounded-full' width={40} alt="" />
   <div className=' tracking-wide font-serif' >
      <span className='font-bold '>{item.name}   </span>
      <span className='text-gray-400'>sent  </span>
@@ -202,10 +297,10 @@ return(
   </ul>
 
   </div>
-  <div className='bg-black/50 SCC  shadow-lg backdrop-blur-sm border border-white/30 w-full px-10 md:px-6 lg:px-10 py-3  rounded-xl text-white'>
+  <div className='bg-black/50 SCC  shadow-lg backdrop-blur-sm border border-white/30 w-full px-10 f md:px-6 lg:px-10 py-3  rounded-xl text-white'>
 <h1 className='text-xl font-bold my-3'>Make a Payment</h1>
 
-<div className='flex flex-col gap-3 my-6'>
+<div className='flex flex-col gap-3 my-6 g'>
   <input type="text" required={true} className='bg-slate-600/40  rounded-lg placeholder:text-slate-200 p-3' name="name" placeholder='Enter Name' id="" onChange={(e)=>handle(e)} value={paymentform.name} />
   <input type="text" value={paymentform.message} required name='message' className='bg-slate-600/40  placeholder:text-slate-200  rounded-lg  p-3' onChange={(e)=>handle(e)} placeholder='Enter Message' id="" />
   <input type="number"  required onChange={(e)=>handle(e)}  name="amount" value={paymentform.amount} id="amount" className='placeholder:text-slate-200 bg-slate-600/40  rounded-lg  p-3' placeholder='Enter Amount (in $)'/>
@@ -221,6 +316,8 @@ return(
 
 </div>
     </div>
+}
+</>
   )
 }
 
