@@ -13,11 +13,11 @@ let path=usePathname()
 
   
   return (
-    <nav className='text-white  bg-gray-800  flex sm:flex-row  flex-col  sm:justify-between py-2.5 px-2 sm:px-10 items-center '>
+    <nav className='text-white  bg-gray-900  flex sm:flex-row  flex-col  sm:justify-between py-2.5 px-2 sm:px-10 items-center '>
       
         <div className="logo text-xl font-bold ml-1 sm:ml-0 ">
             <Link href={"/"} className='cursor-pointer flex  items-center'>
-          <span className='text-2xl'>  Buy me a Drink!</span>
+          <span className='text-2xl text-[#2ceaa1]'>  Buy me a Drink!</span>
             <img src="tea.gif" className='h-14 pb-2 rounded-full ' alt="" />
             </Link>
         </div>
@@ -34,18 +34,18 @@ let path=usePathname()
 </button>
 
 {/* <!-- Dropdown menu --> */}
-<div id="dropdown" onMouseLeave={()=>setTimeout(() => {setshow(false)}, 500)} className={`"z-10 ${show?"block":"hidden"}   absolute left-2 bg-gray-700 divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700"`}>
-    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+<div id="dropdown" onMouseLeave={()=>setTimeout(() => {setshow(false)}, 500)} className={`"z-10 ${show?"block":"hidden"}   absolute left-2 bg-gray-800 divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700"`}>
+    <ul className="py-2 text-sm text-white font-medium dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
       <li>
-       <Link href={`/dashboard`} className="block px-4 py-2  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
+       <Link href={`/dashboard`} className="block px-4 py-2  hover:bg-gray-700 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
       </li>
 
       <li>
-        <Link href={`/${session.user.name}`} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Your Page</Link>
+        <Link href={`/${session.user.name}`} className="block px-4 py-2 hover:bg-gray-700 dark:hover:bg-gray-600 dark:hover:text-white">Your Page</Link>
       </li>
       
       <li>
-        <Link href="/" prefetch={true} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={()=>{signOut({callbackUrl:"/login"})}}>Sign out</Link>
+        <Link href="/" prefetch={true} className="block px-4 py-2 hover:bg-gray-700 dark:hover:bg-gray-600 dark:hover:text-white" onClick={()=>{signOut({callbackUrl:"/login"})}}>Sign out</Link>
       </li>
     </ul>
 </div>

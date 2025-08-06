@@ -201,7 +201,7 @@ else{
    }} }
    
   return (
-    <div className='text-white flex flex-col  items-center py-7 px-6 '>
+    <div className='text-white flex flex-col   items-center py-7 px-6 '>
        <ToastContainer
 position="top-right"
 autoClose={5000}
@@ -220,25 +220,25 @@ transition={Bounce}
 
     <form className=' w-[80%] xl:w-[50%] flex flex-col gap-2' action={submit}>
       <label htmlFor="name" className=' font-medium mx-1 text-lg '>Name</label>
-      <input type="text" id='name' onChange={(e)=>change(e)} name="name" value={form.name}  className='w-full bg-slate-700 rounded-xl p-2'  />
+      <input type="text" id='name' onChange={(e)=>change(e)} name="name" value={form.name}  className='w-full bg-slate-700/50 rounded-xl p-2'  />
 
       <label htmlFor="email" className=' font-medium mx-1 text-lg '>Email</label>
-      <input type="text"  id='email' readOnly={true}  name='email' value={form.email}  className='w-full placeholder:text-white bg-slate-700 rounded-xl p-2'  />
+      <input type="text"  id='email' readOnly={true}  name='email' value={form.email}  className='w-full placeholder:text-white bg-slate-700/50 rounded-xl p-2'  />
 
       <label htmlFor="username" className=' font-medium mx-1 text-lg '>Username</label>
-      <input type="text" id='username'  onChange={(e)=>change(e)} name='username' value={form.username?form.username:""} className='w-full bg-slate-700 rounded-xl p-2'  />
+      <input type="text" id='username'  onChange={(e)=>change(e)} name='username' value={form.username?form.username:""} className='w-full bg-slate-700/50 rounded-xl p-2'  />
 
       <label htmlFor="profile" className=' font-medium mx-1 text-lg '>Profile Picture</label>
-      <input type="text" onChange={(e)=>change(e)} name='profilepic' value={form.profilepic?form.profilepic:""} id='profile' className='w-full bg-slate-700 rounded-xl p-2'  />
+      <input type="text" onChange={(e)=>change(e)} name='profilepic' value={form.profilepic?form.profilepic:""} id='profile' className='w-full bg-slate-700/50 rounded-xl p-2'  />
 
       <label htmlFor="cov"  className=' font-medium mx-1 text-lg'>Cover Picture</label>
-      <input type="text" onChange={(e)=>change(e)} name='coverpic' value={form.coverpic?form.coverpic:""} id='cov' className='w-full bg-slate-700 rounded-xl p-2'  />
+      <input type="text" onChange={(e)=>change(e)} name='coverpic' value={form.coverpic?form.coverpic:""} id='cov' className='w-full bg-slate-700/50 rounded-xl p-2'  />
 
       <label htmlFor="id" className=' font-medium mx-1 text-lg '>Razorpay Id</label>
-      <input type="text" id='id' onChange={(e)=>change(e)} name='id'  value={form.id?form.id:""} className='w-full bg-slate-700 rounded-xl p-2'  />
+      <input type="text" id='id' onChange={(e)=>change(e)} name='id'  value={form.id?form.id:""} className='w-full bg-slate-700/50 rounded-xl p-2'  />
 
       <label htmlFor="secret" className=' font-medium mx-1 text-lg '>Razorpay Secret</label>
-      <input type="text" onChange={(e)=>change(e)} id='secret' name='secret' value={form.secret?form.secret:""} className='w-full bg-slate-700 rounded-xl p-2'  />
+      <input type="text" onChange={(e)=>change(e)} id='secret' name='secret' value={form.secret?form.secret:""} className='w-full bg-slate-700/50 rounded-xl p-2'  />
       
 <button type='submit'  className="text-white bg-gradient-to-br from-black  to-slate-700 hover:bg-gradient-to-bl hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg  text-lg px-5 py-2 justify-center my-2   inline-flex items-center dark:bg-blue-600  dark:hover:bg-blue-700 dark:focus:ring-slate-800 w-full" >Save</button>
 

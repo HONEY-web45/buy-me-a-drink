@@ -5,7 +5,7 @@ const About = () => {
     
     return (
         <div className="container mx-auto px-8 md:px-4 py-8 text-white text-center sm:text-start">
-            <h1 className="text-3xl font-semibold mb-4 ">About Buy Me a Drink</h1>
+            <h1 className="text-3xl font-bold mb-4 text-center ">About Buy Me a Drink</h1>
             <p className="text-lg mb-6">
                 Buy Me a Drink is a crowdfunding platform designed for creators to fund their projects with the support of their fans. It&apos;s a space where your fans can directly contribute to your creative endeavors by Buy ing you a Drink. Unlock the potential of your fanbase and bring your projects to life.
             </p>

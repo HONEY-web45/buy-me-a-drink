@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className='bg-gray-800 text-white p-6 flex justify-center gap-2 flex-col font-medium items-center text-center'>
+    <footer className='bg-gray-900 text-white p-6 flex justify-center gap-2 flex-col font-medium items-center text-center'>
       <div className='flex flex-col sm:flex-row gap-2 font-bold'>
         <Link href="/term" className=" hover:underline">
           Terms & Conditions

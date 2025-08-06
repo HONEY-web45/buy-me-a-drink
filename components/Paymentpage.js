@@ -178,7 +178,7 @@ transition={Bounce}
 
       
 <div className="pay   gap-5 px-[10vw]   flex flex-col md:flex-row   pb-10 ">
-  <div className='bg-gradient-to-br from-black to-slate-600  w-full px-2  sm:px-10 rounded-xl overflow-y-scroll h-[27rem]  relative text-white'>
+  <div className='bg-black/50 SCC  shadow-lg backdrop-blur-sm border border-white/30  w-full px-2  sm:px-10 rounded-xl overflow-y-scroll h-[27rem]  relative text-white'>
   <h1 className='text-xl font-bold my-4  '>Top 10 Supporters</h1>
 <ul  className=' ml-4 my-6 '>
   {payments.length==0 && <p className='text-center text-xl flex items-center justify-center text-slate-400'>No Payments yet</p>}
@@ -202,13 +202,13 @@ return(
   </ul>
 
   </div>
-  <div className='bg-gradient-to-bl from-black via-slate-700  to-slate-900 w-full px-10 md:px-6 lg:px-10 py-3  rounded-xl text-white'>
+  <div className='bg-black/50 SCC  shadow-lg backdrop-blur-sm border border-white/30 w-full px-10 md:px-6 lg:px-10 py-3  rounded-xl text-white'>
 <h1 className='text-xl font-bold my-3'>Make a Payment</h1>
 
 <div className='flex flex-col gap-3 my-6'>
-  <input type="text" required={true} className='bg-gradient-to-br from-black via-slate-700  to-slate-900  rounded-lg placeholder:text-slate-200 p-3' name="name" placeholder='Enter Name' id="" onChange={(e)=>handle(e)} value={paymentform.name} />
-  <input type="text" value={paymentform.message} required name='message' className='bg-gradient-to-br from-black via-slate-700   to-slate-900  placeholder:text-slate-200  rounded-lg  p-3' onChange={(e)=>handle(e)} placeholder='Enter Message' id="" />
-  <input type="number"  required onChange={(e)=>handle(e)}  name="amount" value={paymentform.amount} id="amount" className='bg-gradient-to-br placeholder:text-slate-200 from-black via-slate-700  to-slate-900  rounded-lg  p-3' placeholder='Enter Amount (in $)'/>
+  <input type="text" required={true} className='bg-slate-600/40  rounded-lg placeholder:text-slate-200 p-3' name="name" placeholder='Enter Name' id="" onChange={(e)=>handle(e)} value={paymentform.name} />
+  <input type="text" value={paymentform.message} required name='message' className='bg-slate-600/40  placeholder:text-slate-200  rounded-lg  p-3' onChange={(e)=>handle(e)} placeholder='Enter Message' id="" />
+  <input type="number"  required onChange={(e)=>handle(e)}  name="amount" value={paymentform.amount} id="amount" className='placeholder:text-slate-200 bg-slate-600/40  rounded-lg  p-3' placeholder='Enter Amount (in $)'/>
   
   <button  className="text-white   disabled:from-gray-500 disabled:to-gray-600 bg-gradient-to-br from-black to-slate-600  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg  px-5 text-lg  py-2.5 text-center  mb-2 " onClick={()=>pay((paymentform.amount)*100)} disabled={paymentform.name.length<3 || paymentform.amount<1 || paymentform.message.length<2}   >Pay</button>
 </div>

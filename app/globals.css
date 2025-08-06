@@ -5,3 +5,8 @@
 
  /* main = "worker.js"
  workers_dev = true */
+
+
+ .SCC::-webkit-scrollbar{
+    display: none;
+ }

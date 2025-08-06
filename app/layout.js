@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Sessionwrapper from "@/components/Sessionwrapper";
+import Leniss from "@/components/Lenis";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -30,18 +31,29 @@ export default function RootLayout({ children }) {
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <Leniss>
           <Sessionwrapper>
         <div className="relative z-10" >
         <Navbar /> 
 
         </div>
         
-        <div className="min-h-[80vh] bg-[#000000] bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]">
-
+        <div className="min-h-[80vh] bg-black/30 ">
+ <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="fixed top-0 left-0 w-full h-full object-cover z-[-1]"
+>
+  <source src="b1.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
         {children}
       </div>
         <Footer/>
       </Sessionwrapper>
+      </Leniss>
       </body>
     </html>
   );

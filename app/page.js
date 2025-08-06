@@ -49,14 +49,14 @@ export default function Home() {
       </div>
       <h1 className="text-lg sm:text-2xl font-bold text-center"> Search for a User</h1>
 <div className="flex items-center gap-4">
-  <input type="text" value={name} onChange={(e)=>change(e)} className="h-8 sm:h-10 w-32 pl-2 sm:w-40 bg-slate-600 rounded-lg" />
+  <input type="text" value={name} onChange={(e)=>change(e)} className="h-8 sm:h-10 w-32 pl-2 sm:w-40 bg-slate-600/50 rounded-lg" />
   <button className='text-white   bg-gradient-to-br  from-black  to-slate-700 hover:bg-gradient-to-bl  px-3 py-1 sm:py-2 rounded-lg' onClick={()=>Click()}>
   <Image src="searchhh.svg" width={25} height={25} alt=""  className="invert"/> 
 </button> 
 </div>
       </section>
    <div className="h-[4px] bg-zinc-800 w-full "></div>
-      <section className="min-h-screen  py-16">
+      <section className="min-h-[80vh]  py-16">
         <div className="space-y-14 mx-10">
 
 <p className="text-2xl font-bold text-center">Your fans can Buy  you a Drink</p>
