@@ -123,7 +123,7 @@ const handle=(e)=>{
 var rzp1 = new window.Razorpay(options);
 if(a.error){  
           
-        toast.error("Authentication with Razorpay failed — check your Key ID or Secret.", {
+        toast.error("There is an error.Please try again later.", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,

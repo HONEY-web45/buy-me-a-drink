@@ -8,5 +8,5 @@
 
 
  .SCC::-webkit-scrollbar{
-    display: none;
+    background-color: transparent;
  }
