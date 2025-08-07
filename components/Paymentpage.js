@@ -66,7 +66,7 @@ requestAnimationFrame(()=>{
           y: 200,
           opacity: 0,
           duration: 0.3,
-          delay: -0.5,
+          delay: -0.2
         });
         t1.from(".c", {
           y: 200,
