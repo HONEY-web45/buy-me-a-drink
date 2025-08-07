@@ -237,7 +237,7 @@ rzp1.open()
 }
   return (<>
     {load ? <Spin /> :
-    <div>
+    <div className='overflow-hidden   '>
     <ToastContainer
 position="top-right"
 autoClose={5000}
