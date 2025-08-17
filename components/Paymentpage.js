@@ -60,14 +60,14 @@ requestAnimationFrame(()=>{
           scale: 0,
           opacity: 0,
           duration: 0.5,
-          delay: 0.1,
+          
         });
         t1.from(".b", {
           y: 200,
           opacity: 0,
           duration: 0.3,
-          delay: -0.2
-        });
+          
+        },"-=0.3");
         t1.from(".c", {
           y: 200,
           opacity: 0,
@@ -84,8 +84,8 @@ requestAnimationFrame(()=>{
           opacity: 0,
           duration: 0.2,
           // delay: -0.1,
-        });})
-      }, 500); // Animation kicks in after 500ms
+        },"-=.2");})
+      }, 800); // Animation kicks in after 500ms
     }
   };
 

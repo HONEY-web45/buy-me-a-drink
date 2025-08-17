@@ -51,24 +51,24 @@ start:"top 50%"
     opacity:0,
     duration:.4,
     smoothOrigin:true
-   })
+   },"-=.2")
 tl.from(".c",{
   x:-700,
   opacity:0,
-  duration:.4
-})
+  duration:.6
+   },"-=.1")
 tl.from(".cc",{
   x:500,
   opacity:0,
-  delay:-.3,
-  duration:.4
-})
+ 
+  duration:.6
+},"-=0.6")
 tl.from(".d",{
   y:500,
   opacity:0,
  
   duration:.4
-})
+},"-=.2")
 tl.from(".e",{
   y:500,
   opacity:0,
