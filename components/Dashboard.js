@@ -43,8 +43,9 @@ const Dashboard = () => {
 
   useEffect(() => {
         // console.log(session)
-
-        if (!session) {
+ 
+         if(status==='loading')return
+        if (status==='unauthenticated') {
             router.push('/login')
         }
         else {
@@ -109,7 +110,7 @@ const Dashboard = () => {
         }
         a()
       }
-    }, [])
+    }, [status])
 
 
 
