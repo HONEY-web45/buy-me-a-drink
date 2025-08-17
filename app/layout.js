@@ -27,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-     <link rel="preload" as="video" href="/b1.mp4" type="video/mp4" />
+     <link rel="preload" as="video" href="b1.mp4" type="video/mp4" />
 
       <body
         className="bg-black"

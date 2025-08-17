@@ -65,26 +65,26 @@ requestAnimationFrame(()=>{
         t1.from(".b", {
           y: 200,
           opacity: 0,
-          duration: 0.3,
+          duration: 0.5,
           
-        },"-=0.3");
+        },"-=0.4");
         t1.from(".c", {
           y: 200,
           opacity: 0,
-          duration: 0.2,
+          duration: 0.3,
           delay: 0.05,
         });
         t1.from(".d", {
           x: -1000,
           opacity: 0,
-          duration: 0.2,
+          duration: 0.5,
         });
         t1.from(".f", {
           x: 800,
           opacity: 0,
-          duration: 0.2,
+          duration: 0.5,
           // delay: -0.1,
-        },"-=.2");})
+        },"-=.5");})
       }, 800); // Animation kicks in after 500ms
     }
   };
