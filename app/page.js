@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { click } from "@/actions/useractions";
 import connectDb from "@/db/connectDB";
 import { notFound, useRouter } from "next/navigation";
@@ -29,8 +29,8 @@ export default function Home() {
    }
    
 }
-useEffect
-   useEffect(() => {
+
+   useLayoutEffect(() => {
  let tl=gsap.timeline({
   scrollTrigger:{
     trigger:"#up",
@@ -77,7 +77,7 @@ tl.from(".e",{
 })
   }, [])
 
-useEffect(() => {
+useLayoutEffect(() => {
   const tl=gsap.timeline({
     scrollTrigger:{
       trigger:".gs",

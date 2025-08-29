@@ -8,6 +8,7 @@ import { Bounce } from 'react-toastify';
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Spin from './Spin'
+
 gsap.registerPlugin(ScrollTrigger)
 
 
