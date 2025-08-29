@@ -7,4 +7,6 @@
  workers_dev = true */
 
 
- 
+.vis{
+    opacity: 0;
+}

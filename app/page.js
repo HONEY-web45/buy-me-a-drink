@@ -30,6 +30,18 @@ export default function Home() {
    
 }
 
+
+useLayoutEffect(() => {
+  gsap.to(".vis",{
+    opacity:1
+  })
+
+
+}, [])
+
+
+
+
    useLayoutEffect(() => {
  let tl=gsap.timeline({
   scrollTrigger:{
@@ -42,36 +54,36 @@ start:"top 50%"
   tl.from(".a",{
     scale:0,
     rotate:360,
-    opacity:0,
+    autoAlpha:0,
     duration:1
   })
 
    tl.from(".b",{
     y:700,
-    opacity:0,
+    autoAlpha:0,
     duration:.4,
     smoothOrigin:true
    },"-=.2")
 tl.from(".c",{
   x:-700,
-  opacity:0,
+  autoAlpha:0,
   duration:.6
    },"-=.1")
 tl.from(".cc",{
   x:500,
-  opacity:0,
+  autoAlpha:0,
  
   duration:.6
 },"-=0.6")
 tl.from(".d",{
   y:500,
-  opacity:0,
+  autoAlpha:0,
  
   duration:.4
 },"-=.2")
 tl.from(".e",{
   y:500,
-  opacity:0,
+  autoAlpha:0,
  
   duration:.4
 })
@@ -89,37 +101,37 @@ useLayoutEffect(() => {
 tl.from("#one",{
   x:-400,
   duration:.5,
-  opacity:0,
+  autoAlpha:0,
  
 
 })
 tl.from("#two",{
   x:-500,
   duration:.5,
-  opacity:0,
+  autoAlpha:0,
 
 
 })
 tl.from("#three",{
    y:100,
   duration:.5,
-  opacity:0,
+  autoAlpha:0,
   
 })
 
 tl.from("#four",{
   x:500,
   duration:.5,
-  opacity:0,
+  autoAlpha:0,
   // scrub:1,
 })
 }, [])
 
   return (
     
-    <div className="text-white  overflow-hidden">
+    <div className="text-white   overflow-hidden">
        
-      <section className=" flex flex-col items-center justify-center h-screen gap-3 mx-10 sm:gap-8" id="up">
+      <section className=" flex flex-col items-center justify-center h-screen gap-3 mx-10 sm:gap-8 vis" id="up">
      
 <div className="flex  items-center justify-between sm:justify-center a">
 <span className="bg-gradient-to-b from-white text-2xl sm:text-6xl sm:ml-2  to-gray-400 bg-clip-text font-bold text-transparent text-center ">Buy Me A Drink </span>
