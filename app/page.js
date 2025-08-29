@@ -129,9 +129,9 @@ tl.from("#four",{
 
   return (
     
-    <div className="text-white   overflow-hidden">
+    <div className="text-white  vis  overflow-hidden">
        
-      <section className=" flex flex-col items-center justify-center h-screen gap-3 mx-10 sm:gap-8 vis" id="up">
+      <section className=" flex flex-col items-center justify-center h-screen gap-3 mx-10 sm:gap-8 " id="up">
      
 <div className="flex  items-center justify-between sm:justify-center a">
 <span className="bg-gradient-to-b from-white text-2xl sm:text-6xl sm:ml-2  to-gray-400 bg-clip-text font-bold text-transparent text-center ">Buy Me A Drink </span>

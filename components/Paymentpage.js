@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import Razorpay from 'razorpay'
 import Script from 'next/script'
 import { fetchpayment, fetchuser, initiate } from '@/actions/useractions'
@@ -47,7 +47,7 @@ const getData = async () => {
 
 
 
-useEffect(() => {
+useLayoutEffect(() => {
   const fetchDataAndAnimate =async  () => {
     if (currentUser != null) {
       await getData();
